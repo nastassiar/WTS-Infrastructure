@@ -14,6 +14,8 @@
     "queue1_name": "toparse",
     "queue2_name": "tostore",
     "queue3_name": "sms_toprocess",
+    "queue4_name": "fb_userstore",
+    "queue5_name": "sms_userstore",
     "defaultSASKeyName": "RootManageSharedAccessKey",
     "authRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', parameters('serviceBusNamespaceName'), variables('defaultSASKeyName'))]"
   },
@@ -53,6 +55,30 @@
         {
             "apiVersion": "[variables('sbVersion')]",
             "name": "[variables('queue3_name')]",
+            "type": "Queues",
+            "dependsOn": [
+                "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
+            ],
+            "properties": {
+            },
+            "resources": [
+            ]
+        },
+        {
+            "apiVersion": "[variables('sbVersion')]",
+            "name": "[variables('queue4_name')]",
+            "type": "Queues",
+            "dependsOn": [
+                "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
+            ],
+            "properties": {
+            },
+            "resources": [
+            ]
+        },
+        {
+            "apiVersion": "[variables('sbVersion')]",
+            "name": "[variables('queue5_name')]",
             "type": "Queues",
             "dependsOn": [
                 "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"

@@ -3,7 +3,7 @@
 
 az login
 
-resourceGroupName='PL-WellToldStory'
+resourceGroupName='WellToldStory'
 location=westeurope
 subscription=dc72a57c-74e5-475e-9f09-46f912070bf9
 # Change this to the subscription that you want to use, required to avoid using the 'default' one if you have access to 
