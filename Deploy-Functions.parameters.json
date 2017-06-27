@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "functionAppsName": {
-      "value": "WTSFunctions-dev"
+      "value": "WTS-Functions-dev"
     },
     "storageAccountType": {
       "value": "Standard_LRS"
@@ -11,8 +11,11 @@
     "cosmosDBAccountName": {
       "value": "wtscosmosdb-dev"
     },
+    "facebookVerifyToken": {
+      "value": "1234567"
+    },
     "serviceBusNamespaceName": {
-      "value": "SB-WellToldStory-dev"
+      "value": "SB-WTS-dev"
     },
     "repoURL": {
       "value": "https://github.com/nastassiar/WTS-Functions"

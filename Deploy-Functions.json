@@ -24,6 +24,12 @@
                 "description": "WellToldStory CosmosDB account name"
             }
         },
+        "facebookVerifyToken": {
+            "type": "string",
+            "metadata": {
+                "description": "Facebook verify token"
+            }
+        },
         "serviceBusNamespaceName": {
             "type": "string",
             "metadata": {
@@ -113,6 +119,10 @@
                         {
                             "name": "CosmosDB_Connection",
                             "value": "[concat('AccountEndpoint=https://', parameters('cosmosDBAccountName'), '.documents.azure.com:443', '/;AccountKey=', listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', parameters('cosmosDBAccountName')), '2015-04-08').primaryMasterKey)]"
+                        },
+                        {
+                            "name": "FB_Verify_Token",
+                            "value": "[parameters('facebookVerifyToken')]"
                         }
                     ]
                 }

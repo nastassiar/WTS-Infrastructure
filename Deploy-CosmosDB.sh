@@ -7,14 +7,14 @@ echo '             variables'
 echo '*****************************************************'
 echo ' '
 
-resourceGroupName='WellToldStory'
+resourceGroupName='WTS-dev'
 location=westeurope
-subscription=dc72a57c-74e5-475e-9f09-46f912070bf9
+subscription=64622283-fc87-4edf-900d-f0ee873b3d88
 name='wtscosmosdb-dev'
-databaseName='WTSSocialMedia'
+databaseName='WTSSocialMediaDB'
 smsCollName='SMSData'
-facebookCollName='FacebookData'
-usersCollName='UsersData'
+facebookCollName='FBData'
+usersCollName='Users'
 
 echo '*****************************************************'
 echo '             DB account'

@@ -3,9 +3,10 @@
 
 az login
 
-resourceGroupName='WellToldStory'
+resourceGroupName='WTS-dev'
 location=westeurope
-subscription=dc72a57c-74e5-475e-9f09-46f912070bf9
+subscription=64622283-fc87-4edf-900d-f0ee873b3d88
+
 # Change this to the subscription that you want to use, required to avoid using the 'default' one if you have access to 
 # multiple subscription with your user
 az account set --subscription $subscription
