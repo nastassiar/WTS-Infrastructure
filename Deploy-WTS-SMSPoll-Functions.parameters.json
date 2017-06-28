@@ -1,0 +1,54 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "functionAppsName": {
+      "value": "WTS-SMSPoll-Functions-dev"
+    },
+    "storageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "cosmosDBAccountName": {
+      "value": "wtscosmosdb-dev"
+    },
+    "serviceBusNamespaceName": {
+      "value": "SB-WTS-dev"
+    },
+    "echoApiAuth": {
+      "value": "1234567"
+    },
+    "echoApiKenyaEid": {
+      "value": "1234567"
+    },
+    "echoApiKenyaPassword": {
+      "value": "1234567"
+    },
+    "echoApiKenyaSMSMaxPageSize": {
+      "value": 200
+    },
+    "echoApiKenyaSurveyMaxPageSize": {
+      "value": 100
+    },
+    "echoApiTanzaniaEid": {
+      "value": "1234567"
+    },
+    "echoApiTanzaniaPassword": {
+      "value": "1234567"
+    },
+    "echoApiTanzaniaSMSMaxPageSize": {
+      "value": 200
+    },
+    "echoApiTanzaniaSurveyMaxPageSize": {
+      "value": 100
+    },
+    "blobStorageConnectionString": {
+      "value": "1234567"
+    },
+    "repoURL": {
+      "value": "https://github.com/nastassiar/WTS-SMSPoll-Functions"
+    },
+    "branch": {
+      "value": "master"
+    }
+  }
+}
