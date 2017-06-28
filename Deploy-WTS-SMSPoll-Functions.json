@@ -40,10 +40,10 @@
             "type": "string"
         },
         "echoApiKenyaSMSMaxPageSize": {
-            "type": "integer"
+            "type": "int"
         },
         "echoApiKenyaSurveyMaxPageSize": {
-            "type": "integer"
+            "type": "int"
         },
         "echoApiTanzaniaEid": {
             "type": "string"
@@ -52,10 +52,10 @@
             "type": "string"
         },
         "echoApiTanzaniaSMSMaxPageSize": {
-            "type": "integer"
+            "type": "int"
         },
         "echoApiTanzaniaSurveyMaxPageSize": {
-            "type": "integer"
+            "type": "int"
         },
         "blobStorageConnectionString": {
             "type": "string"
@@ -69,7 +69,7 @@
         }
     },
     "variables": {
-        "storageAccountName": "[concat('func', uniqueString(resourceGroup().id, parameters('functionAppsName'), 'storage')]",
+        "storageAccountName": "[concat('func', uniqueString(resourceGroup().id, parameters('functionAppsName')), 'storage')]",
         "sbVersion": "2015-08-01",
         "defaultSASKeyName": "RootManageSharedAccessKey",
         "SBauthRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', parameters('serviceBusNamespaceName'), variables('defaultSASKeyName'))]"
@@ -201,7 +201,7 @@
                     "properties": {
                         "RepoUrl": "[parameters('repoURL')]",
                         "branch": "[parameters('branch')]",
-                        "IsManualIntegration": false
+                        "IsManualIntegration": true
                     }
                 }
             ]

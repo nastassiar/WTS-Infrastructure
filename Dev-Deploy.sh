@@ -22,16 +22,23 @@ fi
 validTemplate=(az group deployment validate --resource-group $resourceGroupName --template-file Deploy-ServiceBus.json --parameters @Deploy-ServiceBus.parameters.json --verbose)
 if [ $validTemplate != 'true' ]
 then
-    az group deployment create --name DeployDRVNet --resource-group $resourceGroupName --template-file Deploy-ServiceBus.json --parameters @Deploy-ServiceBus.parameters.json --verbose
+    az group deployment create --name Deploy-ServiceBus --resource-group $resourceGroupName --template-file Deploy-ServiceBus.json --parameters @Deploy-ServiceBus.parameters.json --verbose
 fi
 
 # Deploy CosmosDB
 #
 
-# Deploy Functions
-validTemplate=(az group deployment validate --resource-group $resourceGroupName --template-file Deploy-Functions.json --parameters @Deploy-Functions.parameters.json --verbose)
+# Deploy WTS-Functions
+validTemplate=(az group deployment validate --resource-group $resourceGroupName --template-file Deploy-WTS-Functions.json --parameters @Deploy-WTS-Functions.parameters.json --verbose)
 if [ $validTemplate != 'true' ]
 then
-    az group deployment create --name DeployDRVNet --resource-group $resourceGroupName --template-file Deploy-Functions.json --parameters @Deploy-Functions.parameters.json --verbose
+    az group deployment create --name Deploy-WTS-Functions --resource-group $resourceGroupName --template-file Deploy-WTS-Functions.json --parameters @Deploy-WTS-Functions.parameters.json --verbose
+fi
+
+# Deploy WTS-SMSPoll-Functions
+validTemplate=(az group deployment validate --resource-group $resourceGroupName --template-file Deploy-WTS-SMSPoll-Functions.json --parameters @Deploy-WTS-SMSPoll-Functions.parameters.json --verbose)
+if [ $validTemplate != 'true' ]
+then
+    az group deployment create --name WTS-SMSPoll-Functions --resource-group $resourceGroupName --template-file Deploy-WTS-SMSPoll-Functions.json --parameters @Deploy-WTS-SMSPoll-Functions.parameters.json --verbose
 fi
 
