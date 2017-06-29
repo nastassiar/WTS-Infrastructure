@@ -1,0 +1,27 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "functionAppsName": {
+      "value": "WTS-Webhook-Functions-dev"
+    },
+    "storageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "cosmosDBAccountName": {
+      "value": "wtscosmosdb-dev"
+    },
+    "facebookVerifyToken": {
+      "value": "1234567"
+    },
+    "serviceBusNamespaceName": {
+      "value": "SB-WTS-dev"
+    },
+    "repoURL": {
+      "value": "https://github.com/nastassiar/WTS-Webhook-Functions"
+    },
+    "branch": {
+      "value": "master"
+    }
+  }
+}

@@ -29,6 +29,9 @@
     "echoApiKenyaSurveyMaxPageSize": {
       "value": 100
     },
+    "echoApiKenyaSurveySid": {
+      "value": "1234567"
+    },
     "echoApiTanzaniaEid": {
       "value": "1234567"
     },
@@ -40,6 +43,9 @@
     },
     "echoApiTanzaniaSurveyMaxPageSize": {
       "value": 100
+    },
+    "echoApiTanzaniaSurveySid": {
+      "value": "1234567"
     },
     "blobStorageConnectionString": {
       "value": "1234567"

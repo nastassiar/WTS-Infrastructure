@@ -5,7 +5,7 @@
         "functionAppsName": {
             "type": "string",
             "metadata": {
-                "description": "wts-smspoll-functions"
+                "description": "wts-webhook-functions"
             }
         },
         "storageAccountType": {
@@ -24,47 +24,17 @@
                 "description": "WellToldStory CosmosDB account name"
             }
         },
+        "facebookVerifyToken": {
+            "type": "string",
+            "metadata": {
+                "description": "Facebook verify token"
+            }
+        },
         "serviceBusNamespaceName": {
             "type": "string",
             "metadata": {
                 "description": "WellToldStory Azure Service Bus namespace"
             }
-        },
-        "echoApiAuth": {
-            "type": "string"
-        },
-        "echoApiKenyaEid": {
-            "type": "string"
-        },
-        "echoApiKenyaPassword": {
-            "type": "string"
-        },
-        "echoApiKenyaSMSMaxPageSize": {
-            "type": "int"
-        },
-        "echoApiKenyaSurveyMaxPageSize": {
-            "type": "int"
-        },
-        "echoApiKenyaSurveySid": {
-            "type": "string"
-        },
-        "echoApiTanzaniaEid": {
-            "type": "string"
-        },
-        "echoApiTanzaniaPassword": {
-            "type": "string"
-        },
-        "echoApiTanzaniaSMSMaxPageSize": {
-            "type": "int"
-        },
-        "echoApiTanzaniaSurveyMaxPageSize": {
-            "type": "int"
-        },
-        "echoApiTanzaniaSurveySid": {
-            "type": "string"
-        },
-        "blobStorageConnectionString": {
-            "type": "string"
         },
         "repoURL": {
             "type": "string"
@@ -151,52 +121,8 @@
                             "value": "[concat('AccountEndpoint=https://', parameters('cosmosDBAccountName'), '.documents.azure.com:443', '/;AccountKey=', listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', parameters('cosmosDBAccountName')), '2015-04-08').primaryMasterKey)]"
                         },
                         {
-                            "name": "EchoApi_Auth",
-                            "value": "[parameters('EchoApiAuth')]"
-                        },
-                        {
-                            "name": "EchoApi_Kenya_Eid",
-                            "value": "[parameters('echoApiKenyaEid')]"
-                        },
-                        {
-                            "name": "EchoApi_Kenya_Password",
-                            "value": "[parameters('echoApiKenyaPassword')]"
-                        },
-                        {
-                            "name": "EchoApi_Kenya_SMSMaxPageSize",
-                            "value": "[parameters('echoApiKenyaSMSMaxPageSize')]"
-                        },
-                        {
-                            "name": "EchoApi_Kenya_SurveyMaxPageSize",
-                            "value": "[parameters('echoApiKenyaSurveyMaxPageSize')]"
-                        },
-                        {
-                            "name": "EchoApi_Kenya_SurveySid",
-                            "value": "[parameters('echoApiKenyaSurveySid')]"
-                        },
-                        {
-                            "name": "EchoApi_Tanzania_Eid",
-                            "value": "[parameters('echoApiTanzaniaEid')]"
-                        },
-                        {
-                            "name": "EchoApi_Tanzania_Password",
-                            "value": "[parameters('echoApiTanzaniaPassword')]"
-                        },
-                        {
-                            "name": "EchoApi_Tanzania_SMSMaxPageSize",
-                            "value": "[parameters('echoApiTanzaniaSMSMaxPageSize')]"
-                        },
-                        {
-                            "name": "EchoApi_Tanzania_SurveyMaxPageSize",
-                            "value": "[parameters('echoApiTanzaniaSurveyMaxPageSize')]"
-                        },
-                        {
-                            "name": "EchoApi_Tanzania_SurveySid",
-                            "value": "[parameters('echoApiTanzaniaSurveySid')]"
-                        },
-                        {
-                            "name": "BlobStorageConnectionString",
-                            "value": "[parameters('blobStorageConnectionString')]"
+                            "name": "FB_Verify_Token",
+                            "value": "[parameters('facebookVerifyToken')]"
                         }
                     ]
                 }

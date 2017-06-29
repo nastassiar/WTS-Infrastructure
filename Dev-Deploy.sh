@@ -4,6 +4,7 @@
 az login
 
 resourceGroupName='WTS-dev'
+storageAccountName='welltoldstory123storage'
 location=westeurope
 subscription=64622283-fc87-4edf-900d-f0ee873b3d88
 
@@ -33,6 +34,26 @@ validTemplate=(az group deployment validate --resource-group $resourceGroupName 
 if [ $validTemplate != 'true' ]
 then
     az group deployment create --name Deploy-WTS-Functions --resource-group $resourceGroupName --template-file Deploy-WTS-Functions.json --parameters @Deploy-WTS-Functions.parameters.json --verbose
+fi
+
+# Deploy WTS-Storage
+validTemplate=(az group deployment validate --resource-group $resourceGroupName --template-file Deploy-WTS-Storage.json --verbose)
+if [ $validTemplate != 'true' ]
+then
+    az group deployment create --name Deploy-WTS-Storage --resource-group $resourceGroupName --template-file Deploy-WTS-Storage.json --verbose
+
+    # Retrieve the Storage Account connection string 
+    connectionString=$(az storage account show-connection-string --name $storageAccountName --resource-group $resourceGroupName --query connectionString --output tsv)
+
+    az storage table create --name 'Campaigns' --connection-string $connectionString
+
+fi
+
+# Deploy WTS-Webhook-Functions
+validTemplate=(az group deployment validate --resource-group $resourceGroupName --template-file Deploy-WTS-Webhook-Functions.json --parameters @Deploy-WTS-Webhook-Functions.parameters.json --verbose)
+if [ $validTemplate != 'true' ]
+then
+    az group deployment create --name Deploy-WTS-WebHook-Functions --resource-group $resourceGroupName --template-file Deploy-WTS-Webhook-Functions.json --parameters @Deploy-WTS-Webhook-Functions.parameters.json --verbose
 fi
 
 # Deploy WTS-SMSPoll-Functions
