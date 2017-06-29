@@ -44,9 +44,8 @@ then
 
     # Retrieve the Storage Account connection string 
     connectionString=$(az storage account show-connection-string --name $storageAccountName --resource-group $resourceGroupName --query connectionString --output tsv)
-
+    # Create the Campaign table
     az storage table create --name 'Campaigns' --connection-string $connectionString
-
 fi
 
 # Deploy WTS-Webhook-Functions
