@@ -9,13 +9,13 @@
       "value": "Standard_LRS"
     },
     "cosmosDBAccountName": {
-      "value": "wtscosmosdb-dev"
+      "value": "welltoldstorydb-dev"
     },
     "serviceBusNamespaceName": {
-      "value": "SB-WTS-dev"
+      "value": "WTS-SB-dev"
     },
     "repoURL": {
-      "value": "https://github.com/nastassiar/WTS-Functions"
+      "value": "https://github.com/welltoldsotry/WTS-Functions"
     },
     "branch": {
       "value": "master"

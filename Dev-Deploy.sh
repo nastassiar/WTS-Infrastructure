@@ -6,7 +6,7 @@ az login
 resourceGroupName='WTS-dev'
 campaignStorageAccountName='welltoldstory123storage'
 location=westeurope
-subscription=9c7a8343-5f8f-463a-b994-d81fc00090e5
+subscription=03d4bf58-7450-4634-983c-1f65e400e2ae
 
 # Change this to the subscription that you want to use, required to avoid using the 'default' one if you have access to 
 # multiple subscription with your user
