@@ -11,9 +11,6 @@
     "cosmosDBAccountName": {
       "value": "wtscosmosdb-dev"
     },
-    "facebookVerifyToken": {
-      "value": "1234567"
-    },
     "serviceBusNamespaceName": {
       "value": "SB-WTS-dev"
     },
