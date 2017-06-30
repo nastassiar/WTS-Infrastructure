@@ -63,8 +63,12 @@
         "echoApiTanzaniaSurveySid": {
             "type": "string"
         },
-        "blobStorageConnectionString": {
-            "type": "string"
+        "campaignStorageAccountName": {
+            "type": "string",
+            "defaultValue" : "welltoldstory123storage",
+            "metadata": {
+                "description": "Utility Storage Account"
+            }
         },
         "repoURL": {
             "type": "string"
@@ -195,8 +199,8 @@
                             "value": "[parameters('echoApiTanzaniaSurveySid')]"
                         },
                         {
-                            "name": "BlobStorageConnectionString",
-                            "value": "[parameters('blobStorageConnectionString')]"
+                            "name": "WTSStorage_Connection",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('campaignStorageAccountName'),';AccountKey=',listkeys(resourceId('Microsoft.Storage/storageAccounts', parameters('campaignStorageAccountName')), '2015-05-01-preview').key1,';')]"
                         }
                     ]
                 }

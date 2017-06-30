@@ -47,8 +47,8 @@
     "echoApiTanzaniaSurveySid": {
       "value": "1234567"
     },
-    "blobStorageConnectionString": {
-      "value": "1234567"
+    "campaignStorageAccountName": {
+      "value": "welltoldstory123storage"
     },
     "repoURL": {
       "value": "https://github.com/nastassiar/WTS-SMSPoll-Functions"
