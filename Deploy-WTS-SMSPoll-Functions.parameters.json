@@ -9,10 +9,10 @@
       "value": "Standard_LRS"
     },
     "cosmosDBAccountName": {
-      "value": "wtscosmosdb-dev"
+      "value": "welltoldstorydb-dev"
     },
     "serviceBusNamespaceName": {
-      "value": "SB-WTS-dev"
+      "value": "WTS-SB-dev"
     },
     "echoApiAuth": {
       "value": "1234567"

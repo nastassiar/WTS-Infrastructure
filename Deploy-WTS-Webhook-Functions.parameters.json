@@ -9,13 +9,13 @@
       "value": "Standard_LRS"
     },
     "cosmosDBAccountName": {
-      "value": "wtscosmosdb-dev"
+      "value": "welltoldstorydb-dev"
     },
     "facebookVerifyToken": {
       "value": "1234567"
     },
     "serviceBusNamespaceName": {
-      "value": "SB-WTS-dev"
+      "value": "WTS-SB-dev"
     },
     "repoURL": {
       "value": "https://github.com/nastassiar/WTS-Webhook-Functions"

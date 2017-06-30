@@ -42,6 +42,13 @@
         "branch": {
             "type": "string",
             "defaultValue": "master"
+        },
+        "campaignStorageAccountName": {
+            "type": "string",
+            "defaultValue" : "welltoldstory123storage",
+            "metadata": {
+                "description": "Utility Storage Account"
+            }
         }
     },
     "variables": {
@@ -51,6 +58,22 @@
         "SBauthRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', parameters('serviceBusNamespaceName'), variables('defaultSASKeyName'))]"
     },
     "resources": [
+        {
+            "comments": "Storage Account for the Campains Tables and for the Echo-Api LastExec timestamps",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "[parameters('storageAccountType')]",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('campaignStorageAccountName')]",
+            "apiVersion": "2016-01-01",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "scale": null,
+            "properties": {},
+            "dependsOn": []
+        },
         {
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[variables('storageAccountName')]",

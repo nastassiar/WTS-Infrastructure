@@ -3,14 +3,14 @@
 # Set variables for the new account, database, and collection
 
 echo '*****************************************************'
-echo '             variables'
+echo '    CosmosDB Deployment'
 echo '*****************************************************'
 echo ' '
 
 resourceGroupName='WTS-dev'
 location=westeurope
 subscription=64622283-fc87-4edf-900d-f0ee873b3d88
-name='wtscosmosdb-dev'
+name='welltoldstorydb-dev'
 databaseName='WTSSocialMediaDB'
 smsCollName='SMSData'
 facebookCollName='FBData'

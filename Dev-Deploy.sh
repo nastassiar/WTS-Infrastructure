@@ -4,9 +4,13 @@
 az login
 
 resourceGroupName='WTS-dev'
-storageAccountName='welltoldstory123storage'
+campaignStorageAccountName='welltoldstory123storage'
 location=westeurope
 subscription=64622283-fc87-4edf-900d-f0ee873b3d88
+
+sbNamespace='WTS-SB-dev'
+cosmosDBAccount='welltoldstorydb-dev'
+
 
 # Change this to the subscription that you want to use, required to avoid using the 'default' one if you have access to 
 # multiple subscription with your user
@@ -29,21 +33,15 @@ fi
 # Deploy CosmosDB
 #
 
+
 # Deploy WTS-Functions
 validTemplate=(az group deployment validate --resource-group $resourceGroupName --template-file Deploy-WTS-Functions.json --parameters @Deploy-WTS-Functions.parameters.json --verbose)
 if [ $validTemplate != 'true' ]
 then
     az group deployment create --name Deploy-WTS-Functions --resource-group $resourceGroupName --template-file Deploy-WTS-Functions.json --parameters @Deploy-WTS-Functions.parameters.json --verbose
-fi
-
-# Deploy WTS-Storage
-validTemplate=(az group deployment validate --resource-group $resourceGroupName --template-file Deploy-WTS-Storage.json --verbose)
-if [ $validTemplate != 'true' ]
-then
-    az group deployment create --name Deploy-WTS-Storage --resource-group $resourceGroupName --template-file Deploy-WTS-Storage.json --verbose
 
     # Retrieve the Storage Account connection string 
-    connectionString=$(az storage account show-connection-string --name $storageAccountName --resource-group $resourceGroupName --query connectionString --output tsv)
+    connectionString=$(az storage account show-connection-string --name $campaignStorageAccountName --resource-group $resourceGroupName --query connectionString --output tsv)
     # Create the Campaign table
     az storage table create --name 'Campaigns' --connection-string $connectionString
 fi

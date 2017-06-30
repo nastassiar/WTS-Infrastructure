@@ -22,6 +22,9 @@
     },
     "branch": {
       "value": "master"
+    },
+    "campaignStorageAccountName": {
+      "value": "welltoldstory123storage"
     }
   }
 }
