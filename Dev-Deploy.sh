@@ -6,11 +6,7 @@ az login
 resourceGroupName='WTS-dev'
 campaignStorageAccountName='welltoldstory123storage'
 location=westeurope
-subscription=64622283-fc87-4edf-900d-f0ee873b3d88
-
-sbNamespace='WTS-SB-dev'
-cosmosDBAccount='welltoldstorydb-dev'
-
+subscription=9c7a8343-5f8f-463a-b994-d81fc00090e5
 
 # Change this to the subscription that you want to use, required to avoid using the 'default' one if you have access to 
 # multiple subscription with your user

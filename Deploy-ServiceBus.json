@@ -27,6 +27,12 @@
       "apiVersion": "[variables('sbVersion')]",
       "name": "[parameters('serviceBusNamespaceName')]",
       "type": "Microsoft.ServiceBus/namespaces",
+        "sku": {
+            "name": "Basic",
+            "tier": "Basic",
+            "capacity": 1
+        },
+        "kind": "Messaging",
       "location": "[resourceGroup().location]",
       "properties": {
       },
