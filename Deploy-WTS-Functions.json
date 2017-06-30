@@ -139,7 +139,7 @@
                         },
                         {
                             "name": "WTSStorage_Connection",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('campaignStorageAccountName'),';AccountKey=',listkeys(resourceId('Microsoft.Storage/storageAccounts', parameters('campaignStorageAccountName')), '2015-05-01-preview').key1,';')]"
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('campaignStorageAccountName'),';AccountKey=',listkeys(resourceId('Microsoft.Storage/storageAccounts', parameters('campaignStorageAccountName')), '2015-05-01-preview').key1,';EndpointSuffix=core.windows.net')]"
                         }
                     ]
                 }
