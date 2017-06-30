@@ -9,7 +9,7 @@ echo ' '
 
 resourceGroupName='WTS-dev'
 location=westeurope
-subscription=64622283-fc87-4edf-900d-f0ee873b3d88
+subscription=03d4bf58-7450-4634-983c-1f65e400e2ae
 name='welltoldstorydb-dev'
 databaseName='WTSSocialMediaDB'
 smsCollName='SMSData'
@@ -28,7 +28,7 @@ then
 # Create a GlobalDocumentDB API Cosmos DB account
 az cosmosdb create \
     --name $name \
-    --kind GlobalDocumentDB \
+    --kind MongoDB \
     --resource-group $resourceGroupName \
     --max-interval 10 \
     --max-staleness-prefix 200
